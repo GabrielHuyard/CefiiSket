@@ -1,0 +1,7 @@
+{
+  "name": "CefiiSket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
