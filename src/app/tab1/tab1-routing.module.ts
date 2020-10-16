@@ -28,10 +28,6 @@ const routes: Routes = [
     loadChildren: () => import('./player-add/player-add.module').then( m => m.PlayerAddPageModule)
   },
   {
-    path: 'player-delete',
-    loadChildren: () => import('./player-delete/player-delete.module').then( m => m.PlayerDeletePageModule)
-  },
-  {
     path: 'player-update',
     loadChildren: () => import('./player-update/player-update.module').then( m => m.PlayerUpdatePageModule)
   },
@@ -46,10 +42,6 @@ const routes: Routes = [
   {
     path: 'match-update',
     loadChildren: () => import('./match-update/match-update.module').then( m => m.MatchUpdatePageModule)
-  },
-  {
-    path: 'match-delete',
-    loadChildren: () => import('./match-delete/match-delete.module').then( m => m.MatchDeletePageModule)
   },
   {
     path: 'profil-update',
