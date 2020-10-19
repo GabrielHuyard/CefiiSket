@@ -1,3 +1,5 @@
+import { PlayerComponent } from './../player/player.component';
+import { MatchComponent } from './../match/match.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +14,6 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     FormsModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page, MatchComponent, PlayerComponent]
 })
 export class Tab1PageModule {}
