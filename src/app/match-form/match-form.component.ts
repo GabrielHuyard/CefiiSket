@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-match-form',
@@ -8,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class MatchFormComponent implements OnInit {
 
   constructor() { }
+  @Input() edit: boolean;
+  @Input() opponent: string;
+  @Input() date: string;
+  @Input() loc: string;
 
-  ngOnInit() {}
+  btnValid: String;
+
+  ngOnInit() {
+    if (this.edit) {
+      this.btnValid = "Modifier le match";
+    }else{
+      this.btnValid = "Ajouter le match";
+    }
+  }
+  onSubmit(val){
+    console.log(val);
+  }
 
 }

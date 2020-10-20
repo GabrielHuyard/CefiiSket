@@ -1,15 +1,12 @@
-<form #upForm="ngForm"  class="ion-padding">
+<form #upForm="ngForm" (submit)="onSubmit(upForm.value)" class="ion-padding" >
   <ion-item>
-    <ion-input  type="text" name="title" ngModel required placeholder="Entré un titre"></ion-input> 
+    <ion-input [(ngModel)]="this.opponent" type="text" name="opponent" ngModel required placeholder="Nom de l'adversaire"></ion-input> 
   </ion-item>
   <ion-item>
-    <ion-input  type="text" name="country" ngModel placeholder="Entré un pays"></ion-input>
+    <ion-input [(ngModel)]="this.date" type="text" name="date" ngModel placeholder="Date du match"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input  type="text" name="city" ngModel placeholder="Entré une ville"></ion-input>
+    <ion-input [(ngModel)]="this.loc" type="text" name="loc" ngModel placeholder="Lieu du match"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-input type="text" name="mk" ngModel placeholder="Mot(s) clé(s)"></ion-input>
-  </ion-item>
-  <ion-button type="submit" [disabled]="!upForm.valid" expand="block"></ion-button>
+  <ion-button type="submit" [disabled]="!upForm.valid" expand="block">{{this.btnValid}}</ion-button>
 </form>

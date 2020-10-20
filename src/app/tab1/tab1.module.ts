@@ -1,3 +1,4 @@
+import { PlayerFormComponent } from './../player-form/player-form.component';
 import { MatchFormComponent } from './../match-form/match-form.component';
 import { PlayerComponent } from './../player/player.component';
 import { MatchComponent } from './../match/match.component';
@@ -15,6 +16,6 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     FormsModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, MatchComponent, PlayerComponent, MatchFormComponent]
+  declarations: [Tab1Page, MatchComponent, PlayerComponent, MatchFormComponent, PlayerFormComponent]
 })
 export class Tab1PageModule {}
