@@ -1,3 +1,4 @@
+import { MatchFormComponent } from './../match-form/match-form.component';
 import { PlayerComponent } from './../player/player.component';
 import { MatchComponent } from './../match/match.component';
 import { IonicModule } from '@ionic/angular';
@@ -14,6 +15,6 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     FormsModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, MatchComponent, PlayerComponent]
+  declarations: [Tab1Page, MatchComponent, PlayerComponent, MatchFormComponent]
 })
 export class Tab1PageModule {}

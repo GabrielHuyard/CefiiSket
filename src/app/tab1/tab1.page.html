@@ -12,6 +12,7 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-  <app-match></app-match>
-  <app-player></app-player>
+  <app-match [loc]="this.loc" [date]="this.date" [equipe1]="this.equipe1" [equipe2]="this.equipe2"></app-match>
+  <app-player [Nomdujoueur]="this.Nomdujoueur"></app-player>
+  <app-match-form></app-match-form>
 </ion-content>
