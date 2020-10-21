@@ -1,9 +1,26 @@
 <ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
   <ion-toolbar>
-    <ion-title>player-details</ion-title>
+    <ion-title>{{this}}</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <ion-icon center center name="person-circle-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-item class="ion-padding-horizontal ion-padding">
+      <h4>{{this}}</h4>
+    </ion-item>
+    <ion-item class="ion-padding-horizontal ion-padding">
+      <h4>{{this}}</h4>
+    </ion-item>
+    <ion-item class="ion-padding-horizontal ion-padding">
+      <h4>{{this}}</h4>
+    </ion-item>
+  </ion-list>
 </ion-content>

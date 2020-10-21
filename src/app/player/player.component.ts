@@ -1,3 +1,5 @@
+import { PlayerService } from './../services/player-services.service';
+import { NavController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
   @Input() Nomdujoueur:String;
-  constructor() { }
+
+  constructor(
+    private navCtrl: NavController,
+    private playerServ: PlayerService
+  ) { }
 
   ngOnInit() {}
 
+  onClick(){
+    this.navCtrl.navigateBack('/tabs/tab1/player-details');
+    
+  }
 }
