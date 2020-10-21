@@ -9,5 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class Tab1Page implements OnInit {
   constructor( public playerServ: PlayerService) {}
   ngOnInit(){
+    let listeJoueur = this.playerServ.getlistjoueur();
+    console.log(listeJoueur);
   }
+
 }

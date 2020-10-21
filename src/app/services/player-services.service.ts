@@ -10,7 +10,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 export class PlayerService{
   playerCollRef: AngularFirestoreCollection<Users>;
   playerDoc: AngularFirestoreDocument<Users>;
-
+  
   constructor(
     private afs: AngularFirestore,
     private storage: AngularFireStorage
@@ -28,6 +28,20 @@ export class PlayerService{
     );
   }
 
+  getlistjoueur(){
+    this.getAllUsers().subscribe(datas => {
+      const DATALIST = datas;
+      for (const user of DATALIST) {
+        let playerListe:any;
+        if (user.status === false) {
+          playerListe.push(user);
+        }
+        console.log(playerListe);
+        return playerListe;
+        
+        
+      }
+    }, err => console.log(err));
+  }
 
-  
 }

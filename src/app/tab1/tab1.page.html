@@ -13,7 +13,9 @@
     </ion-toolbar>
   </ion-header>
   <app-match [loc]="this" [date]="this" [equipe1]="this" [equipe2]="this"></app-match>
-  <app-player [Nomdujoueur]=""></app-player>
+  <ion-list *ngFor="let joueur of this.listeJoueur">
+    <app-player [Nomdujoueur]="joueur.nom"></app-player>
+  </ion-list>
   <app-match-form [edit]="true" [opponent]="this" [date]="this" [loc]="this"></app-match-form>
   <app-player-form btn="Enregister" [mp]="true" ></app-player-form>
 </ion-content>
