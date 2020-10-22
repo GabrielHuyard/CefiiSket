@@ -1,0 +1,28 @@
+<ion-searchbar
+  type="text"
+  debounce="500"
+  (ionChange)="getItems($event)"
+></ion-searchbar>
+<ion-content>
+  <ion-list *ngIf="isItemAvailable" class="fixedList">
+    <ion-item
+      color="tertiary"
+      *ngFor="let item of items"
+      (click)="chooseCity(item.nom)"
+      >{{ item.nom }}</ion-item
+    >
+  </ion-list>
+  <ion-list *ngIf="!isItemAvailable && !emptyField">
+    <ion-item color="tertiary">Aucun résultat</ion-item>
+  </ion-list>
+  <ion-fab
+    vertical="bottom"
+    horizontal="end"
+    class="ion-padding-top"
+    id="quitButton"
+  >
+    <ion-fab-button>
+      <ion-icon name="close" (click)="dismiss()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

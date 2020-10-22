@@ -1,19 +1,22 @@
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+import { environment } from './../environments/environment';
+import { element } from 'protractor';
+import { FormsModule } from '@angular/forms';
+import { NgCalendarModule } from 'ionic2-calendar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import { FirebaseOriginal } from '@ionic-native/firebase';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,14 +28,18 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule,
-  ],
+    HttpClientModule,
+    NgCalendarModule,
+
+    ],
   providers: [
     StatusBar,
     AngularFirestore,
     AngularFireStorage,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FirebaseAuthentication
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-title>Details du match</ion-title>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="danger" class="ion-text-center"
+        >CEFiisket</ion-card-title
+      >
+      <ion-card-subtitle class="ion-text-center">
+        <ion-icon color="warning" name="flash-outline"></ion-icon>
+      </ion-card-subtitle>
+      <ion-card-title color="danger" class="ion-text-center">{{
+        match.opponent
+      }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <ion-icon color="danger" name="location-outline"></ion-icon
+      >{{ match.city }}
+      <ion-icon color="danger" name="calendar-outline"></ion-icon
+      >{{ match.startTime | date: "dd-MM" }} :
+      {{ match.startTime | date: "HH" }}h{{ match.startTime | date: "mm" }}/{{
+        match.endTime | date: "HH"
+      }}h{{ match.endTime | date: "mm" }}
+      <ion-list>
+        <ion-title>Liste des joueurs</ion-title>
+        <ion-item
+          color="primary"
+          class="ion-text-center"
+          *ngFor="let player of match.players"
+        >
+          <ion-label>{{ player }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-text color="danger" *ngIf="errorMessage"
+        >{{ errorMessage }}Erreur</ion-text
+      >
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-fab-button vertical="bottom" horizontal="start" slot="fixed" class="ion-margin">
+  <ion-icon name="close" (click)="dismiss()"></ion-icon>
+</ion-fab-button>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="dark" (click)="editMatch()">
+      <ion-icon name="construct"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="dark" (click)="deleteMatch()">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

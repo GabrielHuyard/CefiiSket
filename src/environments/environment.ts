@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-   firebaseConfig: {
+  firebaseConfig: {
+    production: false,
     apiKey: 'AIzaSyCboOqvA6sOMKDPL0ELIR3THlQDRJjQDGQ',
     authDomain: 'cefiisket.firebaseapp.com',
     databaseURL: 'https://cefiisket.firebaseio.com',
@@ -12,7 +12,8 @@ export const environment = {
     storageBucket: 'cefiisket.appspot.com',
     messagingSenderId: '838829979306',
     appId: '1:838829979306:web:8c57008c04c977584a82d3',
-    measurementId: 'G-4N3Z0VY5NW'}
+    measurementId: 'G-4N3Z0VY5NW'
+  }
 };
 
 /*
