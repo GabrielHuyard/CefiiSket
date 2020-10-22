@@ -1,4 +1,7 @@
+import { Users } from './../../player.model';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PlayerService } from 'src/app/player.service';
 
 @Component({
   selector: 'app-player-update',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerUpdatePage implements OnInit {
 
-  constructor() { }
+  player: Users = null;
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private playerServ: PlayerService
+  ) { }
 
   ngOnInit() {
+    this.getThisPlayer();
+
+  }
+
+
+  getThisPlayer(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.playerServ.getPlayer(id).subscribe(datas => {
+      this.player = { id, ...datas };
+    }, err => console.log(err));
   }
 
 }
