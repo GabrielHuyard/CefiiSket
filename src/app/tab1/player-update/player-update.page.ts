@@ -1,7 +1,7 @@
 import { Users } from './../../player.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PlayerService } from 'src/app/player.service';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'app-player-update',

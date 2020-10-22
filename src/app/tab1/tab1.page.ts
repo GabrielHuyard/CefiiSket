@@ -1,7 +1,7 @@
 import { environment } from './../../environments/environment';
 import { Users } from './../player.model';
 import { Component } from '@angular/core';
-import { PlayerService } from '../player.service';
+import { PlayerService } from '../services/player.service';
 import * as firebase from 'firebase';
 
 

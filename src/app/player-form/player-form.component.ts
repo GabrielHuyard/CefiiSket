@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { PlayerService } from 'src/app/player.service';
+import { PlayerService } from 'src/app/services/player.service';
 import { Users } from './../player.model';
 import { Component, Input, OnInit } from '@angular/core';
 

@@ -1,6 +1,6 @@
-import { PlayerServicesService } from './../../services/player-services.service';
+import { Users } from './../../services/player.model';
+import { PlayerService } from './../../services/player.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'firebase';
 
 @Component({
   selector: 'app-player-profil',
@@ -8,8 +8,8 @@ import { User } from 'firebase';
   styleUrls: ['./player-profil.page.scss'],
 })
 export class PlayerProfilPage implements OnInit {
-  player: User;
-  constructor(private playerServ: PlayerServicesService) {
+  player: Users;
+  constructor(private playerServ: PlayerService) {
     this.player = this.playerServ.currentUser;
   }
 
@@ -19,7 +19,7 @@ export class PlayerProfilPage implements OnInit {
   deleteAccount()
   {
     if (confirm('Souhaitez-vous vraiment supprimer ce compte ?')) {
-      this.playerServ
+      this.playerServ.deleteAPlayer(this.player.id);
     }
   }
 

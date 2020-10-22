@@ -1,6 +1,6 @@
 import { Users } from './../player.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PlayerService } from 'src/app/player.service';
+import { PlayerService } from 'src/app/services/player.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
