@@ -1,8 +1,8 @@
+import { Users } from './player.model';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Users } from './player.model';
 import { AngularFireStorage } from '@angular/fire/storage';
 @Injectable({
   providedIn: 'root'
