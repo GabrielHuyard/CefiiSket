@@ -39,6 +39,7 @@ export class MatchDetailComponent implements OnInit {
   }
 
   editMatch() {
+    console.log('edit');
     const props = {
       newMatch: this.match,
       existing: true,
@@ -49,6 +50,7 @@ export class MatchDetailComponent implements OnInit {
   }
 
   deleteMatch() {
+    console.log('delete');
     this.matchServ.deleteMatch(this.match.id).then(
       () => { this.dismiss(); },
       err => this.errorMessage = 'Ce match n\'a pas pu être supprimé, veuillez rééssayer'

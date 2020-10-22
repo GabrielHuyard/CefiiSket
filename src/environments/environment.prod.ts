@@ -1,12 +1,13 @@
 export const environment = {
   firebaseConfig: {
     production: true,
-    apiKey: 'AIzaSyDYARxMnvMnZHifrS8ZxqmA4Ik1zKyVy68',
-    authDomain: 'cefiisket-27750.firebaseapp.com',
-    databaseURL: 'https://cefiisket-27750.firebaseio.com',
-    projectId: 'cefiisket-27750',
-    storageBucket: 'cefiisket-27750.appspot.com',
-    messagingSenderId: '962532832473',
-    appId: '1:962532832473:web:a8b4fa28315e1c39643ac8'
+    apiKey: 'AIzaSyCboOqvA6sOMKDPL0ELIR3THlQDRJjQDGQ',
+    authDomain: 'cefiisket.firebaseapp.com',
+    databaseURL: 'https://cefiisket.firebaseio.com',
+    projectId: 'cefiisket',
+    storageBucket: 'cefiisket.appspot.com',
+    messagingSenderId: '838829979306',
+    appId: '1:838829979306:web:8c57008c04c977584a82d3',
+    measurementId: 'G-4N3Z0VY5NW'
   }
 };

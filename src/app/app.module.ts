@@ -27,6 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule,
+    NgCalendarModule,
+
     ],
   providers: [
     StatusBar,

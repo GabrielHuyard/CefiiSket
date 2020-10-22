@@ -1,27 +1,7 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Liste des matchs : {{currentMonth}}</ion-title>
-    <ion-buttons>
-      <ion-button *ngIf=(!calendarVar) (click)="calendarList(true)">Calendrier</ion-button>
-      <ion-button *ngIf=(calendarVar) (click)="calendarList(false)">Liste</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+  <ion-title>Rien</ion-title>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf=(!calendarVar)>
-    <ion-item *ngFor="let match of matches">
-      <ion-grid>
-        <ion-row>
-          Début : {{match.startTime | date:'dd/MM/yyyy HH:mm'}}
-        </ion-row>
-        <ion-row>
-          Fin : {{match.endTime | date:'dd/MM/yyyy HH:mm'}}
-        </ion-row>
-        <ion-button (click)="deleteMatch(match)">Supprimer</ion-button>
-      </ion-grid>
-    </ion-item>
-
-  </ion-list>
-  <app-match *ngIf=(calendarVar)></app-match>
+  <app-match></app-match>
 </ion-content>

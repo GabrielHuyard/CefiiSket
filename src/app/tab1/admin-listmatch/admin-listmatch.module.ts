@@ -7,7 +7,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { IonicModule, ModalController } from '@ionic/angular';
+import { IonicModule} from '@ionic/angular';
 
 import { AdminListmatchPageRoutingModule } from './admin-listmatch-routing.module';
 
@@ -26,7 +26,7 @@ import { AdminListmatchPage } from './admin-listmatch.page';
     MatchComponent,
     MatchFormComponent,
     MatchDetailComponent,
-    CitySearchComponent
+    CitySearchComponent,
   ]
 })
 export class AdminListmatchPageModule {}
