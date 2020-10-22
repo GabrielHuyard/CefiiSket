@@ -1,3 +1,4 @@
+import { AuthServiceService } from './../../services/auth-service.service';
 import { PlayerService } from './../../player.service';
 import { Users } from './../../player.model';
 import { Component, Input, OnInit } from '@angular/core';
@@ -14,7 +15,8 @@ export class PlayerAddPage implements OnInit {
 
   constructor(
     private playerServ: PlayerService,
-    private router: Router
+    private router: Router,
+    private authServ: AuthServiceService
   ) { }
 
   newPlayer: Users = {
@@ -28,17 +30,20 @@ export class PlayerAddPage implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(newPlayerNom: string, newPlayerPrenom: string, newPlayerMail: string, newPlayerPhone: string): void {
+  onSubmit(newPlayerNom: string, newPlayerPrenom: string, newPlayerMail: string, newPlayerPhone: string, newPlayerPassword: string): void {
     if (newPlayerNom.trim() === '') { return; }
     this.newPlayer.Nom = newPlayerNom.trim();
     this.newPlayer.Prenom = newPlayerPrenom.trim();
     this.newPlayer.Mail = newPlayerMail.trim();
     this.newPlayer.Phone = newPlayerPhone.trim();
+    this.newPlayer.Password = newPlayerPassword.trim();
     this.playerServ.addPlayer(this.newPlayer).then(disc => {
+      this.authServ.createNewUser(this.newPlayer.Mail, this.newPlayer.Password);
       this.router.navigate(['/tabs/tab1/admin-listplayer']);
     });
 
   }
+
 
 
 }

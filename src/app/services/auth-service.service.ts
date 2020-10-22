@@ -47,4 +47,8 @@ export class AuthServiceService {
     this.setRedirect(false);
     return firebase.auth().signOut();
   }
+
+  createNewUser(email: string, pw: string): Promise<any>{
+    return firebase.auth().createUserWithEmailAndPassword(email, pw);
+  }
 }
