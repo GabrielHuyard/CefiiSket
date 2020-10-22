@@ -5,5 +5,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-button expand='block' color='success' [routerLink]="['admin-listplayer']" (click)="getListPlayers()" >
+    Voir la liste des joueurs
+  </ion-button>
+
+  
+
   <ion-button [routerLink]="['admin-listmatch']">Matchs</ion-button>
 </ion-content>

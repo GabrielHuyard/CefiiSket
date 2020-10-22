@@ -1,3 +1,4 @@
+import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { environment } from './../environments/environment';
 import { element } from 'protractor';
@@ -12,27 +13,29 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FirebaseOriginal } from '@ionic-native/firebase';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http';
+import { FirebaseOriginal } from '@ionic-native/firebase';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [
-    BrowserModule,
+  imports: [BrowserModule,
+    FormsModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireStorageModule,
     HttpClientModule,
     NgCalendarModule,
 
     ],
   providers: [
     StatusBar,
+    AngularFirestore,
+    AngularFireStorage,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FirebaseAuthentication

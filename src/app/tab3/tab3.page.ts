@@ -1,5 +1,5 @@
-import { ContactServiceService } from './../services/contact-services.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { ContactServiceService } from '../services/contact-services.service';
 
 @Component({
   selector: 'app-tab3',

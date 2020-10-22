@@ -7,14 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AdminListplayerPageRoutingModule } from './admin-listplayer-routing.module';
 
 import { AdminListplayerPage } from './admin-listplayer.page';
+import { ModifPlayerComponent } from 'src/app/modif-player/modif-player.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AdminListplayerPageRoutingModule
+    AdminListplayerPageRoutingModule,
   ],
-  declarations: [AdminListplayerPage]
+  declarations: [AdminListplayerPage, ModifPlayerComponent]
 })
 export class AdminListplayerPageModule {}

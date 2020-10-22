@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PlayerService } from 'src/app/player.service';
+import { Users } from './../player.model';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-player-form',
@@ -7,8 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerFormComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(
+
+  ) { }
 
   ngOnInit() {}
+
+
+
 
 }
