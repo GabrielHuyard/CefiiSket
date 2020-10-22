@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cefiisket-54fc7": {
+      "hosting": {
+        "app": [
+          "cefiisket-54fc7"
+        ]
+      }
+    }
+  }
+}
