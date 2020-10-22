@@ -3,7 +3,7 @@
     <ion-back-button></ion-back-button>
   </ion-buttons>
   <ion-toolbar>
-    <ion-title>{{this}}</ion-title>
+    <ion-title>{{this.userList.Nom}} {{this.userList.Prenom}}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -14,13 +14,13 @@
   </ion-row>
   <ion-list>
     <ion-item class="ion-padding-horizontal ion-padding">
-      <h4>{{this}}</h4>
+      <h4>{{this.userList.Nom}} {{this.userList.Prenom}}</h4>
     </ion-item>
     <ion-item class="ion-padding-horizontal ion-padding">
-      <h4>{{this}}</h4>
+      <h4>{{this.userList.Mail}}</h4>
     </ion-item>
     <ion-item class="ion-padding-horizontal ion-padding">
-      <h4>{{this}}</h4>
+      <h4>{{this.userList.Phone}}</h4>
     </ion-item>
   </ion-list>
 </ion-content>

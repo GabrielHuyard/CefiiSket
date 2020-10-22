@@ -19,8 +19,8 @@ export class Tab3Page implements OnInit {
         const DATALIST = datas;
         for (const user of DATALIST) {
           if (user.status === true) {
-            this.tel = user.Phone;
-            this.mail = user.Mail
+            this.tel = user.phone;
+            this.mail = user.mail
           }
         }
       }, err => console.log(err));

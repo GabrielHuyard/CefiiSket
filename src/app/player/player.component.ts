@@ -9,16 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
   @Input() Nomdujoueur:String;
-
+  @Input() PrenomduJoueur: String;
   constructor(
     private navCtrl: NavController,
-    private playerServ: PlayerService
   ) { }
 
   ngOnInit() {}
 
-  onClick(){
-    this.navCtrl.navigateBack('/tabs/tab1/player-details');
-    
-  }
 }

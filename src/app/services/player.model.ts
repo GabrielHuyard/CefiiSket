@@ -3,4 +3,5 @@ export class Users {
     name?: string;
     mail?: string;
     phone?: number;
+    status?: boolean;
 }

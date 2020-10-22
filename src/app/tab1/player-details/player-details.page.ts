@@ -7,18 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player-details.page.scss'],
 })
 export class PlayerDetailsPage implements OnInit {
-  userList = [];
-  constructor(public authService: PlayerService) { }
+  userList:any;
+  constructor(public playerServ: PlayerService) { }
 
   ngOnInit() {
-    this.authService.getAllUsers().subscribe(datas => {
-      const DATALIST = datas;
-      for (const user of DATALIST) {
-        if (user.status === false) {
-          this.userList.push(user);
-        }
-      }
-    }, err => console.log(err));
+    this.userList = this.playerServ.userSelect;
+    console.log(this.userList);
   }
 
 }

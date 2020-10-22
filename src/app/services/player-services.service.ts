@@ -3,17 +3,19 @@ import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Users } from './player.model';
-import { AngularFireStorage } from '@angular/fire/storage';
+import { AnyARecord } from 'dns';
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService{
   playerCollRef: AngularFirestoreCollection<Users>;
   playerDoc: AngularFirestoreDocument<Users>;
-  
+  ListUser: Array<Users>;
+
+  userSelect: any;
+
   constructor(
-    private afs: AngularFirestore,
-    private storage: AngularFireStorage
+    private afs: AngularFirestore
     ) {
       this.playerCollRef = this.afs.collection<Users>('Users');
   }
@@ -28,20 +30,8 @@ export class PlayerService{
     );
   }
 
-  getlistjoueur(){
-    this.getAllUsers().subscribe(datas => {
-      const DATALIST = datas;
-      for (const user of DATALIST) {
-        let playerListe:any;
-        if (user.status === false) {
-          playerListe.push(user);
-        }
-        console.log(playerListe);
-        return playerListe;
-        
-        
-      }
-    }, err => console.log(err));
+  selectJoueur(user){
+    this.userSelect = user;
+    console.log(this.userSelect);
   }
-
 }
