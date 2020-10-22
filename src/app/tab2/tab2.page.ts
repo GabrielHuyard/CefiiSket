@@ -1,4 +1,6 @@
+import { PlayerServicesService } from './../services/player-services.service';
 import { Component } from '@angular/core';
+import { User } from 'firebase';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  player: User;
+  constructor(private playerServ: PlayerServicesService) {
+    this.player = this.playerServ.currentUser;
+  }
 
 }
