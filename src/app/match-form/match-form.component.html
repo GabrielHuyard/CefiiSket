@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-title class="ion-text-center">
+    Match du {{ newMatch.startTime | date: "dd/MM/yy" }}
+  </ion-title>
+</ion-header>
+<ion-content>
+  <form *ngIf="showAddEvent" class="ion-padding" #addMatchForm="ngForm">
+    <ion-item>
+      <ion-label>Ville : </ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="newMatch.title"
+        name="title"
+        required
+      ></ion-input>
+      <ion-button color="primary" icon-only (click)="openCitySearch()">
+        <ion-icon name="location-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Adversaires :</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="newMatch.opponent"
+        name="opponent"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="startHour">Début :</ion-label>
+      <ion-input
+        type="time"
+        [(ngModel)]="startHour"
+        name="startHour"
+        required
+        value="{{ starth }}:{{ startm }}"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="endHour">Fin :</ion-label>
+      <ion-input
+        type="time"
+        [(ngModel)]="endHour"
+        name="endHour"
+        value="{{ endh }}:{{ endm }}"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Liste des joueurs :</ion-label>
+      <ion-select
+        multiple="true"
+        [(ngModel)]="newMatch.players"
+        name="players"
+        required
+      >
+        <ion-select-option
+          *ngFor="let player of playersList"
+          [value]="player"
+          >{{ player }}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-button
+      *ngIf="!existing"
+      [disabled]="!addMatchForm.valid"
+      color="success"
+      expand="block"
+      (click)="addMatch(addMatchForm)"
+      >Ajouter le match</ion-button
+    >
+    <ion-button
+      *ngIf="existing"
+      [disabled]="!addMatchForm.valid"
+      color="success"
+      expand="block"
+      (click)="editMatch(addMatchForm)"
+      >Enregistrer</ion-button
+    >
+  </form>
+  <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+  <ion-fab
+    vertical="bottom"
+    horizontal="end"
+    class="ion-padding-top"
+    id="quitButton"
+  >
+    <ion-fab-button>
+      <ion-icon name="close" (click)="dismiss()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Nous Contacter
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <img src="../../assets/img/logo.png" >
+    </ion-col>
+  </ion-row>
+  <ion-card class="ion-padding">
+    <h2 class="ion-padding">{{this.adresse}}</h2>
+    <ion-button expand="block" color="red">
+      <a class="ion-padding" href="tel:{{this.tel}}">{{this.tel}}</a>
+    </ion-button>
+    <ion-button expand="block" color="red">
+      <a class="ion-padding" href="mailto:{{this.mail}}">{{this.mail}}</a>
+    </ion-button> 
+  </ion-card>
+</ion-content>

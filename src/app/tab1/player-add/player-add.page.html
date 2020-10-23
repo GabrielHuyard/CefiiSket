@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Ajouter un joueur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #addPlayer="ngForm">
+
+  <ion-item>
+    <ion-label>Nom :</ion-label>
+    <ion-input 
+    type='text' 
+    placeholder='Nom du nouveau joueur' 
+    id="newPlayerNom" 
+    name='nom' 
+    #nom="ngModel"
+    [(ngModel)]="newPlayer.Nom" 
+    required
+    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Prénom :</ion-label>
+    <ion-input 
+    type='text' 
+    placeholder='Prénom du nouveau joueur' 
+    id="newPlayerPrenom" 
+    name='prenom' 
+    #prenom="ngModel"
+    [(ngModel)]="newPlayer.Prenom" 
+    required
+    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Mail :</ion-label>
+    <ion-input 
+    type='text' 
+    placeholder='Mail du nouveau joueur' 
+    id="newPlayerMail" 
+    name='mail' 
+    #mail="ngModel"
+    [(ngModel)]="newPlayer.Mail" 
+    required
+    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Mot de passe :</ion-label>
+    <ion-input 
+    type='text' 
+    placeholder='Mot de passe du nouveau joueur' 
+    id="newPlayerPassword" 
+    name='password' 
+    #mail="ngModel"
+    [(ngModel)]="newPlayer.Password" 
+    required
+    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Téléphone :</ion-label>
+    <ion-input 
+    type='text' 
+    placeholder='Téléphone du nouveau joueur' 
+    id="newPlayerPhone" 
+    name='phone' 
+    #phone="ngModel"
+    [(ngModel)]="newPlayer.Phone" 
+    required
+    pattern="[0-9]"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button color='success' (click)="onSubmit(nom.value, prenom.value, mail.value, phone.value)">
+    <ion-input type='submit'>Ajouter</ion-input>
+  </ion-button>
+
+  </form>
+
+</ion-content>
