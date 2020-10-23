@@ -16,7 +16,12 @@ const routes: Routes = [
   },
   {
     path: '**', redirectTo: 'error404', pathMatch: 'full'
+  },
+  {
+    path: 'profil',
+    loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
   }
+
 ];
 @NgModule({
   imports: [

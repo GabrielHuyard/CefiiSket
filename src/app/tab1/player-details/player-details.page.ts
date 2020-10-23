@@ -1,3 +1,4 @@
+import { PlayerService } from './../../services/player-services.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player-details.page.scss'],
 })
 export class PlayerDetailsPage implements OnInit {
-
-  constructor() { }
+  userList:any;
+  constructor(public playerServ: PlayerService) { }
 
   ngOnInit() {
+    this.userList = this.playerServ.userSelect;
+    console.log(this.userList);
   }
 
 }

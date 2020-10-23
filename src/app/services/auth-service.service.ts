@@ -15,7 +15,7 @@ export class AuthServiceService {
   userCollRef: AngularFirestoreCollection<any>;
   redirect: boolean;
   status: boolean;
-
+  userLog: any;
   constructor(private afs: AngularFirestore,
               private storage: AngularFireStorage) {
                 this.userCollRef = this.afs.collection<any>('Users');

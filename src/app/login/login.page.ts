@@ -34,8 +34,9 @@ getUserList(){
 userStatus(login: string){
   for (const u of this.userList) {
      if (u.Mail === login){
-    return u.status;
-  }
+        this.authService.userLog = u;
+        return u.status;
+      }
   }
 }
 
