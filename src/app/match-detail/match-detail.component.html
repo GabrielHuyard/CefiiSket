@@ -24,13 +24,21 @@
       }}h{{ match.endTime | date: "mm" }}
       <ion-list>
         <ion-title>Liste des joueurs</ion-title>
-        <ion-item
+        <!-- <ion-item
           color="primary"
           class="ion-text-center"
-          *ngFor="let player of match.players"
-        >
+          *ngFor="let player of match.players" *ngFor="let player of match.players"> 
           <ion-label>{{ player }}</ion-label>
         </ion-item>
+        -->
+        <ion-card class="pointer" *ngFor="let player of playersList">
+          <ion-row>
+            <ion-col class="aligne">
+              <ion-icon name="person-circle-outline"></ion-icon>
+              <h4>{{ player }}</h4>
+            </ion-col>
+          </ion-row>
+        </ion-card>
       </ion-list>
       <ion-text color="danger" *ngIf="errorMessage"
         >{{ errorMessage }}Erreur</ion-text
@@ -38,7 +46,12 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
-<ion-fab-button vertical="bottom" horizontal="start" slot="fixed" class="ion-margin">
+<ion-fab-button
+  vertical="bottom"
+  horizontal="start"
+  slot="fixed"
+  class="ion-margin"
+>
   <ion-icon name="close" (click)="dismiss()"></ion-icon>
 </ion-fab-button>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">

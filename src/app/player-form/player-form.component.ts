@@ -1,3 +1,4 @@
+import { Users } from './../models/player.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -14,10 +15,7 @@ export class PlayerFormComponent {
   ) { }
 
   @Input() btn: string;
-  @Input() name: string;
-  @Input() mail: string;
-  @Input() tel: string;
-  @Input() mp: boolean;
+  @Input() player: Users;
 
   onSubmit(val) {
     console.log(val);

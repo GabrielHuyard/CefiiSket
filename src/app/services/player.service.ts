@@ -25,9 +25,9 @@ export class PlayerService {
   constructor(
     private afs: AngularFirestore,
     private storage: AngularFireStorage
-    ) {
-      this.playerCollRef = this.afs.collection<Users>('Users');
-    }
+  ) {
+    this.playerCollRef = this.afs.collection<Users>('Users');
+  }
 
 
   getAllPlayers(): Observable<Users[]> {
@@ -56,14 +56,10 @@ export class PlayerService {
   }
 
   deleteAPlayer(id: string): Promise<any> {
-    console.log(id);
-
     return this.playerCollRef.doc(id).delete();
   }
 
   deletePlayerStorage(id: string): Observable<any> {
-    console.log(id);
-
     return this.storage.ref(id).delete();
   }
 
@@ -72,20 +68,18 @@ export class PlayerService {
   getPlayer(id: string): Observable<Users> {
     this.playerDoc = this.afs.doc<Users>('users/' + id);
     return this.playerDoc.valueChanges();
-}
+  }
 
 
 
   updatePlayer(player: Users): Promise<any> {
-  return this.playerCollRef.doc(player.id).update({
-    Nom: player.Nom,
-    Prenom: player.Prenom,
-    Mail: player.Mail,
-    Phone: player.Phone,
-  });
-}
-
-
+    return this.playerCollRef.doc(player.id).update({
+      Nom: player.Nom,
+      Prenom: player.Prenom,
+      Mail: player.Mail,
+      Phone: player.Phone,
+    });
+  }
 
 
 

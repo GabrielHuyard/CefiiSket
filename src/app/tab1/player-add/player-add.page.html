@@ -57,7 +57,8 @@
     id="newPlayerPassword" 
     name='password' 
     #mail="ngModel"
-    [(ngModel)]="newPlayer.Password" 
+    [(ngModel)]="newPlayer.Password"
+    pattern="[a-zA-Z0-9._-]{6,99}"
     required
     ></ion-input>
   </ion-item>
