@@ -1,4 +1,3 @@
-import { AuthServiceService } from './../services/auth-service.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { TabsPage } from './tabs.page';
