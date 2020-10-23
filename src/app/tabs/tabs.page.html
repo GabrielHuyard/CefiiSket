@@ -6,23 +6,19 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-
- 
-  <ion-tabs tabsHideOnSubPages="true">
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button *ngIf="status"  tab='tab1'  (click)="onclickSet()">
-        <ion-icon name="basketball-outline"></ion-icon>
-        <ion-label>Admin</ion-label>
-      </ion-tab-button>
-      <ion-tab-button  *ngIf="!status"  tab="tab2" (click)="onclickSet()">
-        <ion-icon name="accessibility-outline"></ion-icon>
-        <ion-label>Players</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="tab3" (click)="onclickSetCont()">
-        <ion-icon name="call-outline"></ion-icon>
-        <ion-label>Contact</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  
-  </ion-tabs>
+<ion-tabs tabsHideOnSubPages="true" >
+  <ion-tab-bar color='secondary' slot="bottom" *ngIf="!this.authService.isLog">
+    <ion-tab-button *ngIf="status"  tab='tab1'  (click)="onclickSet()">
+      <ion-icon name="basketball-outline"></ion-icon>
+      <ion-label>Admin</ion-label>
+    </ion-tab-button>
+    <ion-tab-button  *ngIf="!status"  tab="tab2" (click)="onclickSet()">
+      <ion-icon name="accessibility-outline"></ion-icon>
+      <ion-label>Players</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="tab3" (click)="onclickSetCont()">
+      <ion-icon name="call-outline"></ion-icon>
+      <ion-label>Contact</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

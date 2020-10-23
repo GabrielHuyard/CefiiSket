@@ -4,20 +4,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="tertiary">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-
-
-  <ion-button expand='block' color='success' [routerLink]="['admin-listplayer']" (click)="getListPlayers()" >
-    Voir la liste des joueurs
-  </ion-button>
-
-  
-
-  <ion-button [routerLink]="['admin-listmatch']">Matchs</ion-button>
-  <ion-button [routerLink]="['profil']">Profil</ion-button>
-</ion-content>
+  <ion-row>
+    <ion-col size="10" class="ion-padding">
+      <ion-button  expand='block' color='secondary' [routerLink]="['admin-listplayer']" (click)="getListPlayers()"><ion-icon class="ion-padding" name="accessibility-outline"></ion-icon> Liste des joueurs</ion-button>
+      <ion-button  expand='block' color='secondary'  [routerLink]="['admin-listmatch']"><ion-icon class="ion-padding" name="basketball-outline"></ion-icon>Matchs</ion-button>
+      <ion-button  expand='block' color='secondary' [routerLink]="['profil']"><ion-icon class="ion-padding" name="person-circle-outline"></ion-icon>Profil</ion-button>
+    </ion-col>
+  </ion-row>
+  </ion-content>

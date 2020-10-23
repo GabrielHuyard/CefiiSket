@@ -1,45 +1,24 @@
-<ion-header>
-  <ion-toolbar color="primary" class="ion-text-center" size="large">
-    <h1>CefiiSket</h1>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content color="tertiary">
-  <ion-card color="tertiary">
+<ion-header class="orange">
+  <img src="../../assets/img/logo.png" alt="">
+  <ion-card color="secondary">
     <ion-card-header>
-      <ion-title> Sign in</ion-title>
+      <ion-title><ion-icon name="person-circle-outline"></ion-icon>Connexion</ion-title>
     </ion-card-header>
     <ion-card-content>
-      <form #formlog="ngForm" *ngIf="!authService.isLog && !contact" (submit)="loginUser(formlog.value)">
-    <ion-item>
-      <ion-label>
-        Login :
-      </ion-label>
-      <ion-input
-      required
-      type="text"
-      id="login"
-      name="login"
-      [(ngModel)]="login">
-      </ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-       Password :
-      </ion-label>
-      <ion-input
-      required
-      id="pw"
-      name="pw"
-      [(ngModel)]="pw"
-      ></ion-input>
-    </ion-item>
-    <ion-item>
-    <ion-button type="submit" [disabled]="!formlog.valid">
-      Sign in
-    </ion-button>
-  </ion-item>
-  </form>
-</ion-card-content>
+      <form color="secondary" #formlog="ngForm" *ngIf="!authService.isLog && !contact" (submit)="loginUser(formlog.value)">
+        <ion-item color="secondary">
+          <ion-label>Mail : </ion-label>
+          <ion-input required type="text" id="login" name="login" [(ngModel)]="login"></ion-input>
+        </ion-item>
+        <ion-item color="secondary">
+          <ion-label>Mots de passe :</ion-label>
+          <ion-input required id="pw" name="pw" [(ngModel)]="pw" ></ion-input>
+        </ion-item>
+        <ion-button expand="block" type="submit" [disabled]="!formlog.valid">Connexion</ion-button>
+      </form>
+    </ion-card-content>
   </ion-card>
+  <ion-button class="ion-padding" expand="block" routerLink="/tabs/tab3" ><ion-icon class="ion-padding" name="mail-outline"></ion-icon> Nous contacter</ion-button>
+</ion-header>
+<ion-content color="tertiary" class="imgfond">
 </ion-content>
