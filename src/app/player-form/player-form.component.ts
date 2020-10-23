@@ -1,3 +1,4 @@
+import { PlayerService } from 'src/app/services/player.service';
 import { Users } from './../models/player.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -11,13 +12,14 @@ export class PlayerFormComponent {
 
 
   constructor(
-
+private playerServ: PlayerService
   ) { }
 
   @Input() btn: string;
   @Input() player: Users;
+  @Input() mp;
 
-  onSubmit(val) {
-    console.log(val);
+  onSubmit() {
+    this.playerServ.updatePlayer(this.player);
   }
 }

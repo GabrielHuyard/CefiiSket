@@ -1,32 +1,24 @@
 <ion-header>
-<<<<<<< HEAD
-  <ion-toolbar>
-    <ion-title>player-profil</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
-=======
   <ion-toolbar color="primary" class="ion-text-center" size="large">
     <ion-title>Votre profil</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-margin">
-  <app-player-form [btn]="'Enregistrer'" [player]="player"></app-player-form>
+  <app-player-form [btn]="'Enregistrer'" [player]="player" [mp]="mp"></app-player-form>
+  <ion-button (click)="showPassword('true')" *ngIf="!mp">
+    Modifier mot de passe
+  </ion-button>
+  <ion-button (click)="showPassword('false')" *ngIf="mp">
+    Cacher mot de passe
+  </ion-button>
 </ion-content>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button>
     <ion-icon name="ellipsis-vertical-outline"></ion-icon>
   </ion-fab-button>
   <ion-fab-list side="top">
-    <ion-fab-button color="dark" [routerLink]="['profil-update']">
-      <ion-icon name="construct"></ion-icon>
-    </ion-fab-button>
     <ion-fab-button color="dark" (click)="deleteAccount()">
       <ion-icon name="trash-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab-list>
 </ion-fab>
->>>>>>> defd44faa99c348bcd578846724385d58bb48f0d
