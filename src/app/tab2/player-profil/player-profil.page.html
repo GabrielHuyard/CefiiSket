@@ -1,14 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary" class="ion-text-center" size="large">
+    <ion-title>Votre profil</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content [fullscreen]="true" class="ion-margin">
   <ion-list>
-    <ion-item *ngIf="player.prenom && player.nom">
-      {{player.prenom}}{{player.nom}}
+    <ion-item *ngIf="player.Prenom && player.Nom">
+      {{player.Prenom}}{{player.Nom}}
     </ion-item>
   
     <ion-item>
-      <ion-icon name="mail-outline"></ion-icon>{{player.mail}}
+      <ion-icon name="mail-outline"></ion-icon>{{player.Mail}}
     </ion-item>
     <ion-item>
-      <ion-icon name="call-outline"></ion-icon>
+      <ion-icon name="call-outline"></ion-icon>{{player.Phone}}
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,17 +1,12 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header color="primary">
+  <ion-toolbar color="primary" class="ion-text-center" size="large">
     <ion-back-button slot="start"></ion-back-button>
     <ion-title>Liste des joueurs</ion-title>
-    <ion-button slot="end" routerLink="/tabs/tab1/player-add"><ion-icon name="add-outline"></ion-icon></ion-button>
+    <ion-fab-button color="light" slot="end" routerLink="/tabs/tab1/player-add"><ion-icon name="add"></ion-icon></ion-fab-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- 
-
-  
-  
-  
   <ion-card *ngFor="let p of players" appHover='blue'>
     <ion-icon name="accessibility-outline"></ion-icon>
   

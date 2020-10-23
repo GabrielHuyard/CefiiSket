@@ -1,6 +1,6 @@
 import { AuthServiceService } from './../../services/auth-service.service';
 import { PlayerService } from '../../services/player.service';
-import { Users } from './../../player.model';
+import { Users } from '../../models/player.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PlayerAddPage implements OnInit {
 
   @Input() users: Users;
-
+  errorMessage: string;
   constructor(
     private playerServ: PlayerService,
     private router: Router,
@@ -20,29 +20,27 @@ export class PlayerAddPage implements OnInit {
   ) { }
 
   newPlayer: Users = {
-    Nom : '',
-    Prenom : '',
-    Mail : '',
-    Phone : '',
+    Nom: '',
+    Prenom: '',
+    Mail: '',
+    Phone: '',
   };
 
 
   ngOnInit() {
   }
 
-  onSubmit(newPlayerNom: string, newPlayerPrenom: string, newPlayerMail: string, newPlayerPhone: string, newPlayerPassword: string): void {
-    if (newPlayerNom.trim() === '') { return; }
-    this.newPlayer.Nom = newPlayerNom.trim();
-    this.newPlayer.Prenom = newPlayerPrenom.trim();
-    this.newPlayer.Mail = newPlayerMail.trim();
-    this.newPlayer.Phone = newPlayerPhone.trim();
-    this.newPlayer.Password = newPlayerPassword.trim();
-    this.playerServ.addPlayer(this.newPlayer).then(disc => {
+  onSubmit(form): void {
+    console.log(form.value);
+    if (form.value.nom.trim() === '' || form.value.prenom.trim() === '' || form.value.password.trim() === '') {
+      this.errorMessage = 'Erreur';
+    }
+    this.playerServ.addPlayer(this.newPlayer).then(() => {
       this.authServ.createNewUser(this.newPlayer.Mail, this.newPlayer.Password);
       this.router.navigate(['/tabs/tab1/admin-listplayer']);
-    });
+      });
 
-  }
+    }
 
 
 

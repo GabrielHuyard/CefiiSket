@@ -31,40 +31,6 @@
     let-selectedDate="selectedDate"
     let-noEventsLabel="noEventsLabel"
   >
-    <ion-list>
-      <!-- <ion-item
-        *ngFor="let match of selectedDate.events"
-        (click)="onEventDetail(match)"
-        >{{ match.startTime | date: "HH:mm" }} -
-        {{ match.endTime | date: "HH:mm" }} | CEFiisket vs.
-        {{ match.opponent }}</ion-item
-      > -->
-      <ion-card *ngFor="let match of selectedDate.events" (click)="onEventDetail(match)">
-        <ion-row>
-          <ion-col class="aligne"
-            ><ion-icon name="basketball-outline"></ion-icon>
-            <h4>Cefiisket</h4></ion-col
-          >
-          <ion-col class="aligne"
-            ><ion-icon name="flash-outline"></ion-icon
-          ></ion-col>
-          <ion-col class="aligne"
-            ><ion-icon name="basketball-outline"></ion-icon>
-            <h4>{{ match.opponent }}</h4></ion-col
-          >
-        </ion-row>
-        <ion-row>
-          <ion-col class="aligne"
-            ><ion-icon name="calendar-outline"></ion-icon>
-            <h4>{{ match.startTime | date: "HH:mm" }} -
-              {{ match.endTime | date: "HH:mm" }}</h4></ion-col
-          >
-          <ion-col class="aligne"
-            ><ion-icon name="location-outline"></ion-icon>
-            <h4>{{ match.city }}</h4></ion-col
-          >
-        </ion-row>
-      </ion-card>
-    </ion-list>
+    <app-match-card [matches]="selectedDate.events"></app-match-card>
   </ng-template>
 </ion-content>

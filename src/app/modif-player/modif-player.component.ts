@@ -1,4 +1,4 @@
-import { Users } from './../player.model';
+import { Users } from '../models/player.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PlayerService } from 'src/app/services/player.service';
 import { Component, Input, OnInit } from '@angular/core';

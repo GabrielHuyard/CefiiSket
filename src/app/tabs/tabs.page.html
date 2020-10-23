@@ -1,14 +1,3 @@
-<ion-header>
-  <ion-toolbar color="primary" class="ion-text-center" size="large">
-    <h1>CefiiSket</h1>
-    <ion-button icon-only slot="end" *ngIf="redirect" (click)="logOut()">
-      <ion-icon name="exit-outline"></ion-icon>
-    </ion-button>
-  </ion-toolbar>
-</ion-header>
-
-
- 
   <ion-tabs tabsHideOnSubPages="true">
     <ion-tab-bar slot="bottom">
       <ion-tab-button *ngIf="status"  tab='tab1'  (click)="onclickSet()">

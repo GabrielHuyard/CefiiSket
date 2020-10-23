@@ -1,3 +1,4 @@
+import { MatchCardComponent } from './match-card/match-card.component';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { environment } from './../environments/environment';
@@ -38,7 +39,9 @@ import { FirebaseOriginal } from '@ionic-native/firebase';
     AngularFireStorage,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    FirebaseAuthentication
+    FirebaseAuthentication,
+    MatchCardComponent
+
   ],
   bootstrap: [AppComponent]
 })

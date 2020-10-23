@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { Users } from '../player.model';
+import { Users } from '../models/player.model';
 import { AngularFireStorage } from '@angular/fire/storage';
 
 
@@ -14,7 +14,13 @@ import { AngularFireStorage } from '@angular/fire/storage';
 export class PlayerService {
   playerCollRef: AngularFirestoreCollection<Users>;
   playerDoc: AngularFirestoreDocument<Users>;
-  currentUser: Users;
+  currentUser: Users = {
+    Nom: 'test',
+    Prenom: 'test',
+    Mail: 'test@test.fr',
+    Phone: '0316464661',
+    Password: 'u'
+  };
 
   constructor(
     private afs: AngularFirestore,

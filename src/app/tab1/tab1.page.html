@@ -1,6 +1,9 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Tab 1 </ion-title>
+<ion-header>
+  <ion-toolbar color="primary" class="ion-text-center" size="large">
+    <ion-title>Administration</ion-title>
+    <ion-button icon-only slot="end" (click)="logOut()">
+      <ion-icon name="exit-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -12,11 +15,8 @@
   </ion-header>
 
 
-  <ion-button expand='block' color='success' [routerLink]="['admin-listplayer']" (click)="getListPlayers()" >
-    Voir la liste des joueurs
+  <ion-button [routerLink]="['admin-listplayer']" (click)="getListPlayers()" >
+    Joueurs
   </ion-button>
-
-  
-
   <ion-button [routerLink]="['admin-listmatch']">Matchs</ion-button>
 </ion-content>
