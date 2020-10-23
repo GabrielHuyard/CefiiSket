@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary" class="ion-text-center" size="large">
+    <ion-buttons slot="start" *ngIf="this.router.url === '/tabs/tab3'">
+      <ion-back-button>test</ion-back-button>
+    </ion-buttons>
     <h1>CefiiSket</h1>
     <ion-buttons icon-only slot="end" *ngIf="redirect" (click)="logOut()">
       <ion-icon name="exit-outline"></ion-icon>
@@ -7,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-tabs tabsHideOnSubPages="true" >
-  <ion-tab-bar color='secondary' slot="bottom" *ngIf="!this.authService.isLog">
+  <ion-tab-bar color='secondary' slot="bottom" *ngIf="this.authService.isLog">
     <ion-tab-button *ngIf="status"  tab='tab1'  (click)="onclickSet()">
       <ion-icon name="basketball-outline"></ion-icon>
       <ion-label>Admin</ion-label>

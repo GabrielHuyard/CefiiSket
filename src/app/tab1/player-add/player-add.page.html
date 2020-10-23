@@ -19,7 +19,6 @@
     #nom="ngModel"
     [(ngModel)]="newPlayer.Nom" 
     required
-    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
     ></ion-input>
   </ion-item>
 
@@ -33,7 +32,6 @@
     #prenom="ngModel"
     [(ngModel)]="newPlayer.Prenom" 
     required
-    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
     ></ion-input>
   </ion-item>
 
@@ -47,7 +45,7 @@
     #mail="ngModel"
     [(ngModel)]="newPlayer.Mail" 
     required
-    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
+    pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}"
     ></ion-input>
   </ion-item>
 
@@ -61,7 +59,6 @@
     #mail="ngModel"
     [(ngModel)]="newPlayer.Password" 
     required
-    pattern="[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}"
     ></ion-input>
   </ion-item>
 
@@ -75,14 +72,16 @@
     #phone="ngModel"
     [(ngModel)]="newPlayer.Phone" 
     required
-    pattern="[0-9]"
+    pattern="[0-9]{10}"
     ></ion-input>
   </ion-item>
 
-  <ion-button color='success' (click)="onSubmit(nom.value, prenom.value, mail.value, phone.value)">
-    <ion-input type='submit'>Ajouter</ion-input>
+  <ion-button color='success' (click)="onSubmit(addPlayer)">
+    <ion-button [disabled]="!addPlayer.valid" color="success"
+    expand="block">Ajouter</ion-button>
   </ion-button>
 
   </form>
+  <ion-text color="danger">{{errorMessage}}</ion-text>
 
 </ion-content>

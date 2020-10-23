@@ -1,4 +1,3 @@
-import { AuthServiceService } from './../services/auth-service.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { TabsPage } from './tabs.page';
@@ -8,7 +7,7 @@ const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'tab1',
@@ -24,14 +23,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs',
+        redirectTo: 'tabs',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs',
+    redirectTo: 'tabs',
     pathMatch: 'full'
   }
 ];

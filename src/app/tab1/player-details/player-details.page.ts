@@ -1,4 +1,4 @@
-import { PlayerService } from './../../services/player-services.service';
+import { PlayerService } from 'src/app/services/player.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player-details.page.scss'],
 })
 export class PlayerDetailsPage implements OnInit {
-  userList:any;
+  userList;
   constructor(public playerServ: PlayerService) { }
 
   ngOnInit() {
-    this.userList = this.playerServ.userSelect;
+    this.userList = this.playerServ.currentUser;
     console.log(this.userList);
   }
 

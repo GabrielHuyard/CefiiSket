@@ -1,4 +1,3 @@
-import { PlayerService } from './../services/player-services.service';
 import { NavController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -8,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./player.component.scss'],
 })
 export class PlayerComponent implements OnInit {
-  @Input() Nomdujoueur:String;
-  @Input() PrenomduJoueur: String;
+  @Input() Nomdujoueur: string;
+  @Input() PrenomduJoueur: string;
   constructor(
     private navCtrl: NavController,
   ) { }

@@ -1,3 +1,5 @@
+import { Users } from './../services/player.model';
+import { PlayerService } from './../services/player.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  constructor(private playerServ: PlayerService) {
+  }
 
 }

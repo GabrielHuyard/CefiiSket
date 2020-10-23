@@ -1,4 +1,4 @@
-import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+
 import { AngularFireModule } from '@angular/fire';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,6 +19,5 @@ import { LoginPage } from './login.page';
     AngularFireModule
   ],
   declarations: [LoginPage],
-  providers: [FirebaseAuthentication]
 })
 export class LoginPageModule {}

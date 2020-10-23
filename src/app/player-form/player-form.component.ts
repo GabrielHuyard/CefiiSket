@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './player-form.component.html',
   styleUrls: ['./player-form.component.scss'],
 })
-export class PlayerFormComponent{
+export class PlayerFormComponent {
 
 
 
@@ -18,8 +18,8 @@ export class PlayerFormComponent{
   @Input() mail: string;
   @Input() tel: string;
   @Input() mp: boolean;
-  
-  onSubmit(val){
+
+  onSubmit(val) {
     console.log(val);
   }
 }

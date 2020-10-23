@@ -1,4 +1,3 @@
-import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,9 +14,6 @@ import { PlayerAddPage } from './player-add.page';
     FormsModule,
     IonicModule,
     PlayerAddPageRoutingModule
-  ],
-  providers: [
-    FirebaseAuthentication,
   ],
   declarations: [PlayerAddPage]
 })

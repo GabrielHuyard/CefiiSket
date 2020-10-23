@@ -1,8 +1,8 @@
 import { ModifPlayerComponent } from './../../modif-player/modif-player.component';
 import { Router } from '@angular/router';
-import { PlayerService } from './../../player.service';
+import { PlayerService } from '../../services/player.service';
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../../player.model';
+import { Users } from '../../models/player.model';
 import { ModalController } from '@ionic/angular';
 
 @Component({
