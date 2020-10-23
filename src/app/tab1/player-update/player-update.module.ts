@@ -1,3 +1,4 @@
+import { PlayerFormComponent } from './../../player-form/player-form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,8 +14,8 @@ import { PlayerUpdatePage } from './player-update.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    PlayerUpdatePageRoutingModule
+    PlayerUpdatePageRoutingModule,
   ],
-  declarations: [PlayerUpdatePage]
+  declarations: [PlayerUpdatePage, PlayerFormComponent]
 })
 export class PlayerUpdatePageModule {}

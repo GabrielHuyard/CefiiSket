@@ -1,3 +1,4 @@
+import { AngularFireStorage } from '@angular/fire/storage';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,10 +8,13 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
+    IonicModule,
     FormsModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+  ],
+  providers: [
+    AngularFireStorage
   ],
   declarations: [Tab1Page]
 })

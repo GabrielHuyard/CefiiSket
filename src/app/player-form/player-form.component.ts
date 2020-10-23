@@ -7,7 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PlayerFormComponent{
 
-  constructor() { }
+
+
+  constructor(
+
+  ) { }
 
   @Input() btn: string;
   @Input() name: string;
