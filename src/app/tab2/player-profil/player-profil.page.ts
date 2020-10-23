@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerProfilPage implements OnInit {
   player: Users;
+  mp = false;
   constructor(private playerServ: PlayerService) {
     this.player = this.playerServ.currentUser;
   }
@@ -23,4 +24,11 @@ export class PlayerProfilPage implements OnInit {
     }
   }
 
+  showPassword(bool){
+    if (bool === 'true') {
+      this.mp = true;
+    } else {
+      this.mp = false;
+    }
+  }
 }

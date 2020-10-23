@@ -1,15 +1,18 @@
-<form #upForm="ngForm" (submit)="onSubmit(upForm.value)" class="ion-padding">
+<form #upForm="ngForm" (submit)="onSubmit()" class="ion-padding">
   <ion-item>
-    <ion-input [(ngModel)]="this.name" type="text" name="name" placeholder="Non du joueur"  ngModel required ></ion-input> 
+    <ion-input [(ngModel)]="player.Nom" type="text" name="name" placeholder="Nom" required ></ion-input> 
   </ion-item>
   <ion-item>
-    <ion-input [(ngModel)]="this.mail" type="email" name="email"  placeholder="Votre@email.com" ngModel required></ion-input>
+    <ion-input [(ngModel)]="player.Prenom" type="text" name="firstname" placeholder="Prénom" required ></ion-input> 
   </ion-item>
   <ion-item>
-    <ion-input [(ngModel)]="this.tel" type="tel" name="tel"  placeholder="Votre téléphone" ngModel required></ion-input>
+    <ion-input [(ngModel)]="player.Mail" type="email" name="email"  placeholder="Votre@email.com"  required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="player.Phone" type="tel" name="tel"  placeholder="Votre téléphone" required></ion-input>
   </ion-item>
   <ion-item *ngIf="mp">
-    <ion-input name="password" type="password" placeholder="Votre mots de passe" ngModel required></ion-input>
+    <ion-input name="password" [(ngModel)]="player.Password" value='' type="password" placeholder="Votre mots de passe" required></ion-input>
   </ion-item>
-  <ion-button type="submit" [disabled]="!upForm.valid" expand="block">{{this.btn}}</ion-button>
+  <ion-button type="submit" [disabled]="!upForm.valid" expand="block">{{btn}}</ion-button>
   </form>

@@ -49,6 +49,7 @@ export class AuthServiceService {
   }
 
   createNewUser(email: string, pw: string): Promise<any>{
-    return firebase.auth().createUserWithEmailAndPassword(email, pw);
+    console.log('coucou');
+    return firebase.auth().createUserWithEmailAndPassword(email, pw); 
   }
 }

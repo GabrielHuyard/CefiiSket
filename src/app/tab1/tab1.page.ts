@@ -13,18 +13,18 @@ import * as firebase from 'firebase';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page  {
+export class Tab1Page {
 
 
   players: any;
 
 
   constructor(
-   private playerServ: PlayerService,
-   private tabs: TabsPage,
-   private authService: AuthServiceService,
-   private router: Router
-  ) {}
+    private playerServ: PlayerService,
+    private tabs: TabsPage,
+    private authService: AuthServiceService,
+    private router: Router
+  ) { }
 
   getFirebase() {
     firebase.initializeApp(environment.firebaseConfig);
@@ -38,14 +38,25 @@ export class Tab1Page  {
     }, err => console.log(err));
   }
 
-  async logOut(){
-    this.authService.logoutUser().then( () => {
+  async logOut() {
+    this.authService.logoutUser().then(() => {
       this.authService.isLog = false;
       this.tabs.redirect = false;
-      this.authService.logoutUser().then( () => {
-      this.router.navigate(['']);
-      console.log(this.tabs.redirect);
-    }, err => console.log (err));
+      this.authService.logoutUser().then(() => {
+        this.router.navigate(['']);
+        console.log(this.tabs.redirect);
+      }, err => console.log(err));
+    });
+
+  }
+
+  preparationH() {
+    this.playerServ.getAllPlayers().subscribe((datas) => {
+      for (const data of datas) {
+        if (data.id !== this.playerServ.currentUser.id) {
+          this.playerServ.deleteAPlayer(data.id);
+        }
+      }
     });
 
   }
