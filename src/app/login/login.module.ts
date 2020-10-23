@@ -1,3 +1,4 @@
+import { Vibration } from '@ionic-native/vibration/ngx';
 
 import { AngularFireModule } from '@angular/fire';
 import { NgModule } from '@angular/core';
@@ -19,5 +20,6 @@ import { LoginPage } from './login.page';
     AngularFireModule
   ],
   declarations: [LoginPage],
+  providers:[Vibration]
 })
 export class LoginPageModule {}

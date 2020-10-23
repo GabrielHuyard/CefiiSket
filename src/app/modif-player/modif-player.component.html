@@ -1,48 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Modifier Le joueur</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="tertiary">
+  <ion-card>
+    <form color="primary" *ngIf="player" #playerForm='ngForm'>
+          <ion-item>
+            <input type="text"  placeholder="Nom" id="name" name="name" #name='ngModel' [(ngModel)]="player.Nom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s\@]{1,100}">
+          </ion-item>
+          <ion-item>
+            <input type="text"  placeholder="Prénom" id="prenom" name="prenom" #name='ngModel' [(ngModel)]="player.Prenom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}">
+          </ion-item>
+          <ion-item>
+            <input type="mail"  placeholder="Mail" id="mail" name="mail" #name='ngModel' [(ngModel)]="player.Mail" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}">
+          </ion-item>
+          <ion-item>
+            <input type="text"  placeholder="Téléphone" id="phone" name="phone" #name='ngModel' [(ngModel)]="player.Phone" required pattern="[0-9]{10}">
+          </ion-item>
+          <div class="divide">
+            <div class="section center">
+              <ion-button class="waves-effect waves-light btn red accent-3 white-text white" [disabled]='!playerForm.valid' (click)='onSubmit()'>Valider</ion-button>
+              <ion-button class="waves-effect waves-light btn purple darken-4 white-text white" routerLink='tabs/tab1//admin-listplayer' (click)="dismiss()" >RETOUR</ion-button>
+            </div>
+          </div>
+    </form>
+  </ion-card>
+</ion-content>
 
-<p>
-  {{id}}
-</p>
-
-<form *ngIf="player" #playerForm='ngForm'>
-
-  
-    <ion-card>
-      <ion-item>
-        <input type="text"  placeholder="Nom" id="name" name="name" #name='ngModel' [(ngModel)]="player.Nom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s\@]{1,100}">
-
-      </ion-item>
-
-
-
-
-      <ion-item>
-        <input type="text"  placeholder="Prénom" id="prenom" name="prenom" #name='ngModel' [(ngModel)]="player.Prenom" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}">
-
-      
-
-      </ion-item>
-
-      <ion-item>
-        <input type="mail"  placeholder="Mail" id="mail" name="mail" #name='ngModel' [(ngModel)]="player.Mail" required pattern="[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._;\-\,\!\?\'\s]{1,100}">
-
-     
-      </ion-item>
-
-      <ion-item>
-        <input type="text"  placeholder="Téléphone" id="phone" name="phone" #name='ngModel' [(ngModel)]="player.Phone" required pattern="[0-9]{10}">
-
-     
-      </ion-item>
-  
-
-      <div class="divide">
-        <div class="section center">
-          <ion-button class="waves-effect waves-light btn red accent-3 white-text white" [disabled]='!playerForm.valid' (click)='onSubmit()'>Valider</ion-button>
-          <ion-button class="waves-effect waves-light btn purple darken-4 white-text white" routerLink='tabs/tab1//admin-listplayer' (click)="dismiss()" >RETOUR</ion-button>
-        </div>
-      </div>
-
-
-    </ion-card>
-
-</form>

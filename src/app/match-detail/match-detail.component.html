@@ -1,8 +1,11 @@
 <ion-header>
-  <ion-title>Details du match</ion-title>
+  <ion-toolbar color="primary"  size="large">
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Details du match</ion-title>
+  </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-card>
+<ion-content color="tertiary">
+  <ion-card color="secondary">
     <ion-card-header>
       <ion-card-title color="danger" class="ion-text-center"
         >CEFiisket</ion-card-title
@@ -14,7 +17,7 @@
         match.opponent
       }}</ion-card-title>
     </ion-card-header>
-    <ion-card-content class="ion-text-center">
+    <ion-card-content  class="ion-text-center">
       <ion-icon color="danger" name="location-outline"></ion-icon
       >{{ match.city }}
       <ion-icon color="danger" name="calendar-outline"></ion-icon
@@ -22,16 +25,9 @@
       {{ match.startTime | date: "HH" }}h{{ match.startTime | date: "mm" }}/{{
         match.endTime | date: "HH"
       }}h{{ match.endTime | date: "mm" }}
-      <ion-list>
-        <ion-title>Liste des joueurs</ion-title>
-        <!-- <ion-item
-          color="primary"
-          class="ion-text-center"
-          *ngFor="let player of match.players" *ngFor="let player of match.players"> 
-          <ion-label>{{ player }}</ion-label>
-        </ion-item>
-        -->
-        <ion-card class="pointer" *ngFor="let player of playersList">
+      <ion-card color="primary">
+        <ion-title >Liste des joueurs</ion-title>
+        <ion-card  color="primary" class="pointer" *ngFor="let player of playersList">
           <ion-row>
             <ion-col class="aligne">
               <ion-icon name="person-circle-outline"></ion-icon>
@@ -39,22 +35,14 @@
             </ion-col>
           </ion-row>
         </ion-card>
-      </ion-list>
+      </ion-card>
       <ion-text color="danger" *ngIf="errorMessage"
         >{{ errorMessage }}Erreur</ion-text
       >
     </ion-card-content>
   </ion-card>
-</ion-content>
-<ion-fab-button
-  vertical="bottom"
-  horizontal="start"
-  slot="fixed"
-  class="ion-margin"
->
-  <ion-icon name="close" (click)="dismiss()"></ion-icon>
-</ion-fab-button>
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  
+<ion-fab color="primary" vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button>
     <ion-icon name="ellipsis-vertical-outline"></ion-icon>
   </ion-fab-button>
@@ -67,3 +55,13 @@
     </ion-fab-button>
   </ion-fab-list>
 </ion-fab>
+<ion-fab-button
+  vertical="bottom"
+  horizontal="start"
+  slot="fixed"
+  class="ion-margin"
+>
+  <ion-icon  name="close" (click)="dismiss()"></ion-icon>
+</ion-fab-button>
+</ion-content>
+

@@ -1,20 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary"  size="large">
     <ion-back-button slot="start"></ion-back-button>
     <ion-title>Modification du joueur</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
-  {{ player | json }}
-
   <h1>Edition du joueur : {{ player.Nom }}</h1>
-
-
-
     <app-player-form [player]='player'></app-player-form>
-
-
-
 </ion-content>

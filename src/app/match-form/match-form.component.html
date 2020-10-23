@@ -1,11 +1,14 @@
 <ion-header>
-  <ion-title class="ion-text-center">
-    Match du {{ newMatch.startTime | date: "dd/MM/yy" }}
-  </ion-title>
+  <ion-toolbar color="primary"  size="large">
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title class="ion-text-center">
+      Match du {{ newMatch.startTime | date: "dd/MM/yy" }}
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
-<ion-content>
-  <form *ngIf="showAddEvent" class="ion-padding" #addMatchForm="ngForm">
-    <ion-item>
+<ion-content color="tertiary">
+  <form color="primary" *ngIf="showAddEvent" class="ion-padding" #addMatchForm="ngForm">
+    <ion-item color="primary">
       <ion-label>Ville : </ion-label>
       <ion-input
         type="text"
@@ -17,7 +20,7 @@
         <ion-icon name="location-outline"></ion-icon>
       </ion-button>
     </ion-item>
-    <ion-item>
+    <ion-item color="primary">
       <ion-label>Adversaires :</ion-label>
       <ion-input
         type="text"
@@ -26,7 +29,7 @@
         required
       ></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item color="primary">
       <ion-label for="startHour">Début :</ion-label>
       <ion-input
         type="time"
@@ -36,7 +39,7 @@
         value="{{ starth }}:{{ startm }}"
       ></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item color="primary">
       <ion-label for="endHour">Fin :</ion-label>
       <ion-input
         type="time"
@@ -45,7 +48,7 @@
         value="{{ endh }}:{{ endm }}"
       ></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item color="primary">
       <ion-label>Liste des joueurs :</ion-label>
       <ion-select
         multiple="true"

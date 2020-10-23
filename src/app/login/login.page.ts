@@ -1,3 +1,4 @@
+import { Vibration } from '@ionic-native/vibration/ngx';
 import { PlayerService } from './../services/player.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -20,7 +21,8 @@ export class LoginPage implements OnInit {
   constructor( public authService: AuthServiceService,
                private router: Router,
                private alertCtrl: AlertController,
-               private playerServ: PlayerService
+               private playerServ: PlayerService,
+               //public vabration: Vibration
               ) {
                 }
 ngOnInit(){
@@ -68,6 +70,7 @@ userStatus(login: string){
         await alert.present();
       }
     );
+    //this.vabration.vibrate([500, 110, 500, 110 , 450, 110, 200, 110, 170, 40, 450, 110, 200, 110, 170, 40, 500]);
   }
   onclickSet(){
     this.contact = false;

@@ -1,16 +1,19 @@
 <ion-header>
-  <ion-toolbar color="primary" class="ion-text-center" size="large">
+  <ion-toolbar color="primary" size="large">
     <ion-title>Votre profil</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content [fullscreen]="true" class="ion-margin">
+<ion-content [fullscreen]="true" class="ion-margin" color="tertiary">
+  <ion-card>
+    <ion-icon color="secondary" name="person-circle-outline"></ion-icon>
   <app-player-form [btn]="'Enregistrer'" [player]="player" [mp]="mp"></app-player-form>
-  <ion-button (click)="showPassword('true')" *ngIf="!mp">
+  <ion-button expand="block" (click)="showPassword('true')" *ngIf="!mp">
     Modifier mot de passe
   </ion-button>
   <ion-button (click)="showPassword('false')" *ngIf="mp">
     Cacher mot de passe
   </ion-button>
+  </ion-card>
 </ion-content>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button>

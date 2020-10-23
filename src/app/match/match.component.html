@@ -1,5 +1,5 @@
-<ion-content>
-  <ion-fab
+<ion-content color="tertiary">
+  <ion-fab 
     vertical="bottom"
     horizontal="end"
     class="ion-padding-top"
@@ -10,7 +10,7 @@
       <ion-icon name="add" (click)="showAdd('open')"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <calendar
+  <calendar 
     [monthviewEventDetailTemplate]="template"
     locale="fr-FR"
     id="myCalendar"
@@ -26,7 +26,7 @@
     step="30"
   >
   </calendar>
-  <ng-template
+  <ng-template 
     #template
     let-showEventDetail="showEventDetail"
     let-selectedDate="selectedDate"

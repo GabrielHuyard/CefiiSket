@@ -5,14 +5,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-label>Filtrer par 
+<ion-content color="tertiary">
+  <ion-label>
     <ion-button (click)="filterBy('city')" [disabled]="cityButton">Ville</ion-button>
     <ion-button (click)="filterBy('date')" [disabled]="dateButton">Date</ion-button>
     <ion-button (click)="filterBy('myMatches')" [disabled]="myButton">Mes Matches</ion-button>
   </ion-label>
-  <ion-item>
-    <ion-searchbar
+  
+    <ion-searchbar color="secondary"
       [hidden]="!cityButton"
       type="text"
       debounce="500"
@@ -27,6 +27,5 @@
     >
 
     </ion-input>
-  </ion-item>
   <app-match-card [matches]="filteredMatches"></app-match-card>
 </ion-content>
