@@ -1,9 +1,4 @@
 apply plugin: 'com.android.application'
-<<<<<<< HEAD
-=======
-apply plugin: 'io.fabric'
-apply plugin: 'com.google.gms.google-services'
->>>>>>> defd44faa99c348bcd578846724385d58bb48f0d
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
