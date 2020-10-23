@@ -53,11 +53,11 @@ export class Tab1Page {
   preparationH() {
     this.playerServ.getAllPlayers().subscribe((datas) => {
       for (const data of datas) {
-        if (data.id !== this.playerServ.currentUser.id){
-            this.playerServ.deleteAPlayer(data.id);
+        if (data.id !== this.playerServ.currentUser.id) {
+          this.playerServ.deleteAPlayer(data.id);
         }
       }
-    })
+    });
 
   }
 
