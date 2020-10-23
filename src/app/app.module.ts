@@ -1,3 +1,4 @@
+import { MatchCardComponent } from './match-card/match-card.component';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from './../environments/environment';
 import { element } from 'protractor';
@@ -35,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFirestore,
     AngularFireStorage,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    MatchCardComponent
+
   ],
   bootstrap: [AppComponent]
 })

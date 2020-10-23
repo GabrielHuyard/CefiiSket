@@ -5,10 +5,21 @@ buildscript {
     repositories {
         google()
         jcenter()
+<<<<<<< HEAD
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.1'
         classpath 'com.google.gms:google-services:4.3.3'
+=======
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.google.gms:google-services:4.3.4'
+        classpath 'io.fabric.tools:gradle:1.+'
+
+
+>>>>>>> defd44faa99c348bcd578846724385d58bb48f0d
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -17,10 +28,18 @@ buildscript {
 
 apply from: "variables.gradle"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> defd44faa99c348bcd578846724385d58bb48f0d
 allprojects {
     repositories {
         google()
         jcenter()
+<<<<<<< HEAD
+=======
+        maven { url 'https://maven.fabric.io/public' }
+>>>>>>> defd44faa99c348bcd578846724385d58bb48f0d
     }
 }
 

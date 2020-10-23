@@ -26,5 +26,18 @@
       <option name="name" value="MavenRepo" />
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
+<<<<<<< HEAD
+=======
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://maven.google.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://maven.fabric.io/public" />
+    </remote-repository>
+>>>>>>> defd44faa99c348bcd578846724385d58bb48f0d
   </component>
 </project>

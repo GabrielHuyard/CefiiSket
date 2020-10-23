@@ -1,3 +1,4 @@
+import { MatchCardComponent } from './../../match-card/match-card.component';
 import { CitySearchComponent } from './../../city-search/city-search.component';
 import { MatchDetailComponent } from './../../match-detail/match-detail.component';
 import { MatchFormComponent } from './../../match-form/match-form.component';
@@ -27,6 +28,7 @@ import { AdminListmatchPage } from './admin-listmatch.page';
     MatchFormComponent,
     MatchDetailComponent,
     CitySearchComponent,
+    MatchCardComponent
   ]
 })
 export class AdminListmatchPageModule {}

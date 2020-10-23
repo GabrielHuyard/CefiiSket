@@ -1,3 +1,4 @@
+import { MatchCardComponent } from './../../match-card/match-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,8 @@ import { PlayerListmatchPage } from './player-listmatch.page';
     IonicModule,
     PlayerListmatchPageRoutingModule
   ],
-  declarations: [PlayerListmatchPage]
+  declarations: [PlayerListmatchPage,
+    MatchCardComponent
+  ]
 })
 export class PlayerListmatchPageModule {}

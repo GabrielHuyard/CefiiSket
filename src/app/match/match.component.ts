@@ -1,3 +1,4 @@
+import { PlayerService } from 'src/app/services/player.service';
 import { Match } from './../models/match.model';
 import { MatchDetailComponent } from './../match-detail/match-detail.component';
 import { MatchFormComponent } from './../match-form/match-form.component';
@@ -17,11 +18,11 @@ registerLocaleData(localeFR, 'fr');
 })
 export class MatchComponent implements OnInit {
   // Données fictives
-  playersList = ['joueur1', 'joueur2', 'joueur3', 'joueur4'];
+  playersList = [];
   // Elements de départ
   newMatch: Match = {
     city: '',
-    players: this.playersList,
+    players: [],
     startTime: new Date(),
     endTime: new Date(),
     location: {
@@ -48,12 +49,19 @@ export class MatchComponent implements OnInit {
   constructor(
     private matchServ: MatchService,
     private adminlist: AdminListmatchPage,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private playerServ: PlayerService
   ) {
   }
 
   ngOnInit() {
     this.updateMatches();
+    this.playerServ.getAllPlayers().subscribe((datas) => {
+      for (const data of datas) {
+        this.playersList.push(data.Nom);
+      }
+      this.newMatch.players = this.playersList;
+    });
   }
   // MODAL ////////////////////////////
   // Formulaire
@@ -99,12 +107,6 @@ export class MatchComponent implements OnInit {
   onRangeChanged(ev) {
   }
 
-  onEventDetail(match: Match) {
-    const props = {
-      match
-    };
-    this.presentModal(MatchDetailComponent, props, 'matchDetailModal');
-  }
 
   updateMatches() {
     this.matchServ.getMatches().subscribe(datas => {

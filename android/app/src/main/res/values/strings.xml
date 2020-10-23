@@ -1,7 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
+<<<<<<< HEAD
     <string name="app_name">cefiiskeat</string>
     <string name="title_activity_main">cefiiskeat</string>
+=======
+    <string name="app_name">CefiiSket</string>
+    <string name="title_activity_main">CefiiSket</string>
+>>>>>>> defd44faa99c348bcd578846724385d58bb48f0d
     <string name="package_name">io.ionic.starter</string>
     <string name="custom_url_scheme">io.ionic.starter</string>
 </resources>

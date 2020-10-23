@@ -1,7 +1,10 @@
+import { Router } from '@angular/router';
+import { AuthServiceService } from './../services/auth-service.service';
+import { TabsPage } from './../tabs/tabs.page';
 import { environment } from './../../environments/environment';
-import { Users } from './../player.model';
+import { Users } from '../models/player.model';
 import { Component } from '@angular/core';
-import { PlayerService } from '../player.service';
+import { PlayerService } from '../services/player.service';
 import * as firebase from 'firebase';
 
 
@@ -18,6 +21,9 @@ export class Tab1Page  {
 
   constructor(
    private playerServ: PlayerService,
+   private tabs: TabsPage,
+   private authService: AuthServiceService,
+   private router: Router
   ) {}
 
   getFirebase() {
@@ -30,7 +36,17 @@ export class Tab1Page  {
       // console.log(datas);
       return this.players = datas;
     }, err => console.log(err));
+  }
 
+  async logOut(){
+    this.authService.logoutUser().then( () => {
+      this.authService.isLog = false;
+      this.tabs.redirect = false;
+      this.authService.logoutUser().then( () => {
+      this.router.navigate(['']);
+      console.log(this.tabs.redirect);
+    }, err => console.log (err));
+    });
 
   }
 

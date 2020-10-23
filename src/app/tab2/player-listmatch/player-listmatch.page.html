@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>player-listmatch</ion-title>
+  <ion-toolbar color="primary" class="ion-text-center" size="large">
+    <ion-title>Liste des matchs</ion-title>
+    <ion-back-button (clic)="dismiss()" slot="start"></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-label>Filtrer par 
+    <ion-button (click)="filterBy('city')" [disabled]="cityButton">Ville</ion-button>
+    <ion-button (click)="filterBy('date')" [disabled]="dateButton">Date</ion-button>
+    <ion-button (click)="filterBy('myMatches')" [disabled]="myButton">Mes Matches</ion-button>
+  </ion-label>
+  <ion-item>
+    <ion-searchbar
+      [hidden]="!cityButton"
+      type="text"
+      debounce="500"
+      (ionChange)="filter(filterValue)"
+      [(ngModel)]="filterValue"
+    ></ion-searchbar>
+    <ion-input
+    type="date"
+      [hidden]="!dateButton"
+      (ionChange)="filter(filterDate)"
+      [(ngModel)]="filterDate"
+    >
 
+    </ion-input>
+  </ion-item>
+  <app-match-card [matches]="filteredMatches"></app-match-card>
 </ion-content>

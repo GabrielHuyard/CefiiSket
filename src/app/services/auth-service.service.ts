@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import 'firebase/auth';
 import { Observable } from 'rxjs';
 import { Users } from './player.model';
 import {map, tap} from 'rxjs/operators';
@@ -14,7 +15,7 @@ export class AuthServiceService {
   userCollRef: AngularFirestoreCollection<any>;
   redirect: boolean;
   status: boolean;
-
+  userLog: any;
   constructor(private afs: AngularFirestore,
               private storage: AngularFireStorage) {
                 this.userCollRef = this.afs.collection<any>('Users');

@@ -1,0 +1,26 @@
+<ion-card *ngFor="let match of matches" (click)="onEventDetail(match)">
+  <ion-row>
+    <ion-col class="aligne"
+      ><ion-icon name="basketball-outline"></ion-icon>
+      <h4>Cefiisket</h4></ion-col
+    >
+    <ion-col class="aligne"
+      ><ion-icon name="flash-outline"></ion-icon
+    ></ion-col>
+    <ion-col class="aligne"
+      ><ion-icon name="basketball-outline"></ion-icon>
+      <h4>{{ match.opponent }}</h4></ion-col
+    >
+  </ion-row>
+  <ion-row>
+    <ion-col class="aligne"
+      ><ion-icon name="calendar-outline"></ion-icon>
+      <h4>{{ match.startTime | date: "HH:mm" }} -
+        {{ match.endTime | date: "HH:mm" }}</h4></ion-col
+    >
+    <ion-col class="aligne"
+      ><ion-icon name="location-outline"></ion-icon>
+      <h4>{{ match.city }}</h4></ion-col
+    >
+  </ion-row>
+</ion-card>

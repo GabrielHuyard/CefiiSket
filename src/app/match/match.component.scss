@@ -7,3 +7,12 @@ calendar {
 	margin-bottom: 1em;
 }
 
+.aligne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+ion-icon{
+    font-size: 50px;
+}

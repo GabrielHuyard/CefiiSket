@@ -1,3 +1,4 @@
+import { PlayerFormComponent } from './../../player-form/player-form.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,9 @@ import { PlayerProfilPage } from './player-profil.page';
     IonicModule,
     PlayerProfilPageRoutingModule
   ],
-  declarations: [PlayerProfilPage]
+  declarations: [
+    PlayerProfilPage,
+    PlayerFormComponent
+  ]
 })
 export class PlayerProfilPageModule {}

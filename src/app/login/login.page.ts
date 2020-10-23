@@ -1,3 +1,4 @@
+import { PlayerService } from './../services/player.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -19,6 +20,7 @@ export class LoginPage implements OnInit {
   constructor( public authService: AuthServiceService,
                private router: Router,
                private alertCtrl: AlertController,
+               private playerServ: PlayerService
               ) {
                 }
 ngOnInit(){
@@ -34,6 +36,8 @@ getUserList(){
 userStatus(login: string){
   for (const u of this.userList) {
      if (u.Mail === login){
+    this.playerServ.currentUser = u;
+    this.authService.userLog = u;
     return u.status;
   }
   }

@@ -1,4 +1,3 @@
-<ion-header></ion-header>
 <ion-content>
   <ion-fab
     vertical="bottom"
@@ -11,7 +10,7 @@
     </ion-fab-button>
   </ion-fab>
   <calendar
-  [monthviewEventDetailTemplate]="template"
+    [monthviewEventDetailTemplate]="template"
     locale="fr-FR"
     id="myCalendar"
     startingDayWeek="1"
@@ -26,11 +25,12 @@
     step="30"
   >
   </calendar>
-  <ng-template #template let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
-    <ion-list>
-      <ion-item *ngFor="let match of selectedDate.events" (click)="onEventDetail(match)">{{match.startTime | date : 'HH:mm' }} - {{match.endTime | date :'HH:mm'}} | CEFiisket vs. {{match.opponent}}</ion-item>
-    </ion-list>
+  <ng-template
+    #template
+    let-showEventDetail="showEventDetail"
+    let-selectedDate="selectedDate"
+    let-noEventsLabel="noEventsLabel"
+  >
+    <app-match-card [matches]="selectedDate.events"></app-match-card>
   </ng-template>
-
-
 </ion-content>

@@ -18,6 +18,6 @@ import { LoginPage } from './login.page';
     LoginPageRoutingModule,
     AngularFireModule
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
 })
 export class LoginPageModule {}
