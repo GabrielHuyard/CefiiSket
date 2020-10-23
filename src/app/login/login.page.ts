@@ -37,6 +37,7 @@ userStatus(login: string){
   for (const u of this.userList) {
      if (u.Mail === login){
     this.playerServ.currentUser = u;
+    this.authService.userLog = u;
     return u.status;
   }
   }

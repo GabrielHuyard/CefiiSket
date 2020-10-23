@@ -1,6 +1,3 @@
-import { Router } from '@angular/router';
-import { PlayerService } from 'src/app/services/player.service';
-import { Users } from '../models/player.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './player-form.component.html',
   styleUrls: ['./player-form.component.scss'],
 })
-export class PlayerFormComponent implements OnInit {
+export class PlayerFormComponent {
 
 
 
@@ -16,9 +13,13 @@ export class PlayerFormComponent implements OnInit {
 
   ) { }
 
-  ngOnInit() {}
+  @Input() btn: string;
+  @Input() name: string;
+  @Input() mail: string;
+  @Input() tel: string;
+  @Input() mp: boolean;
 
-
-
-
+  onSubmit(val) {
+    console.log(val);
+  }
 }

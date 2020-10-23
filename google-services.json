@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "838829979306",
+    "firebase_url": "https://cefiisket.firebaseio.com",
+    "project_id": "cefiisket",
+    "storage_bucket": "cefiisket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838829979306:android:369a00c5ce38d3174a82d3",
+        "android_client_info": {
+          "package_name": "com.cefiisket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838829979306-kav28vtsrr17rj0ma0phqe62k1vao8en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAir5TGY8DyngvQvdMzavL18W0ENHWW3pI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838829979306-kav28vtsrr17rj0ma0phqe62k1vao8en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

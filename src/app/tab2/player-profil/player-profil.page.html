@@ -4,18 +4,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-margin">
-  <ion-list>
-    <ion-item *ngIf="player.Prenom && player.Nom">
-      {{player.Prenom}}{{player.Nom}}
-    </ion-item>
-  
-    <ion-item>
-      <ion-icon name="mail-outline"></ion-icon>{{player.Mail}}
-    </ion-item>
-    <ion-item>
-      <ion-icon name="call-outline"></ion-icon>{{player.Phone}}
-    </ion-item>
-  </ion-list>
+  <app-player-form></app-player-form>
 </ion-content>
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
   <ion-fab-button>

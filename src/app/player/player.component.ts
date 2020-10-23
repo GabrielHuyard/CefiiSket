@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-player',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player.component.scss'],
 })
 export class PlayerComponent implements OnInit {
-
-  constructor() { }
+  @Input() Nomdujoueur:String;
+  @Input() PrenomduJoueur: String;
+  constructor(
+    private navCtrl: NavController,
+  ) { }
 
   ngOnInit() {}
 
